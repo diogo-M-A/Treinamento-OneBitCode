@@ -1,0 +1,11 @@
+// importa common
+@import "./var/common/common.scss";
+
+//importa cores
+@import "./var/colors/colors.scss";
+
+//importa estilização cadastro
+@import "./pages/cadastro.scss";
+
+//importar estilçização do login
+@import "./pages/login.scss";

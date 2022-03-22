@@ -1,0 +1,21 @@
+@import "../colors/colors.scss";
+#title-home{
+    font-size: 44px;
+    font-family: sans-serif;
+}
+
+.btn{
+    width: 150px;
+    padding-top: 15px;
+    cursor: pointer;
+    background-color: $btn-background;
+    color: white;
+    display: block;
+    margin-top: 10px;
+}
+
+@mixin txt-style($color, $font-size, $font-family){
+    color: $color;
+    font-size: $font-size;
+    font-family: $font-family;
+}
