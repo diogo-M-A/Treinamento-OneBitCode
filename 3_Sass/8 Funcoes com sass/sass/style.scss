@@ -1,0 +1,17 @@
+@function color-title($background-color){
+    @if(lightness($background-color)>50){
+        @return black;
+    } @else{
+        @return white;
+    }
+}
+
+@mixin back-and-color($color){
+    background-color: $color;
+    color: color-title($color)  
+}
+
+.setcolor{
+    height: 100vh;
+    @include back-and-color(rgb(156, 4, 156))
+}
