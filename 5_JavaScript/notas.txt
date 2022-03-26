@@ -1,0 +1,12 @@
+ console.log("msg")
+	.info
+	.warn
+	.error
+ 
+ alert("msg");
+
+ confirm("msg");
+-é um alert com opção de cancel.
+
+ prompt("msg");
+-faz input
