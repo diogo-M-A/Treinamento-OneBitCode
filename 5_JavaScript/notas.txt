@@ -9,4 +9,15 @@
 -é um alert com opção de cancel.
 
  prompt("msg");
--faz input
+-faz input, retorna null ou o valor.
+
+ variáveis = var, let e const.
+
+ confirm("msg");
+-retorna true ou false dependendo da resposta do user
+
+ 'string' > 'string2'
+- usando com strings, o operador '>' verifica se a string
+vem depois de string 2 na órdem alfabética.
+
+operador condicional tradicional vs operador condicional ternário
