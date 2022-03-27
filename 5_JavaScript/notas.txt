@@ -18,6 +18,6 @@
 
  'string' > 'string2'
 - usando com strings, o operador '>' verifica se a string
-vem depois de string 2 na órdem alfabética.
+vem depois de string 2 na ordem alfabética.
 
 operador condicional tradicional vs operador condicional ternário
