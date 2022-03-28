@@ -1,12 +1,13 @@
 import React, {Fragment} from "react";
-import './style.css';
+import GrayImg from "../../shared/gray img/index";
 
-const Planet = () => {
+
+const Planet = (props) => {
   return(
     <Fragment>
-      <h3>Saturno</h3>
-      <p>Saturno é o sexto planeta a partir do Sol e o segundo maior do Sistema Solar atrás de Júpiter. Pertencente ao grupo dos gigantes gasosos, possui cerca de 95 massas terrestres e orbita a uma distância média de 9,5 unidades astronômicas.</p>
-      <img src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg' alt='saturno'></img>
+      <h3>{props.name}</h3>
+      <p>{props.description}</p>
+      <GrayImg img_url={props.img_url}/>
     </Fragment>
   )
 }
