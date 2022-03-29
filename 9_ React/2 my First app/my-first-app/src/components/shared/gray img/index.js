@@ -4,7 +4,7 @@ import './style.css';
 const GrayImg = (props) => {
   return(
     <Fragment>
-      <img src={props.img_url} alt='saturno'></img>
+      <img className={props.gray ? 'gray-img' : 'color-img'} src={props.img_url} alt='saturno'></img>
     </Fragment>
   )
 }
