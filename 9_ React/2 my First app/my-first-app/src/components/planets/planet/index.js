@@ -2,31 +2,52 @@ import React, { Fragment } from "react";
 import GrayImg from "../../shared/gray img/index";
 import DescriptionWithLink from "../../shared/descriptionWithLink";
 
+async function getSatellites(id){
+  let response = await fetch(`http://localhost:3000/api/${id}.json`);
+  let data = await response.json();
+  return data;
+}
 
-const Planet = (props) => {
-
-
-  let title;
-  if (props.title_with_underline) {
-    title = <h3><u>{props.name}</u></h3>
-  } else {
-    title = <h3>{props.name}</h3>
+class Planet extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      satellites:[]
+    }
   }
 
-  return (
-    <div onClick={() => props.ClickOnPlanet(props.name)}>
-      {title}
-      <DescriptionWithLink paragrafo={props.paragrafo}
-        link={props.link} />
-      <GrayImg gray={props.gray} img_url={props.img_url} />
-      <h4>Satélites</h4>
-      <ul>
-        {['a', 'b', 'c', 'd'].map((n)=>
-          <li>Satélite {n}</li>)}
-      </ul>
-      <hr/>
-    </div>
-  )
+  componentDidMount(){
+    getSatellites(this.props.id).then(data=>{
+      this.setState(state => ({
+        satellites: data['satellites']
+      }))
+    })
+  }
+
+  render(){
+    let title;
+    if (this.props.title_with_underline) {
+      title = <h3><u>{this.props.name}</u></h3>
+    } else {
+      title = <h3>{this.props.name}</h3>
+    }
+  
+    return (
+      <div onClick={() => this.props.ClickOnPlanet(this.props.name)}>
+        {title}
+        <DescriptionWithLink paragrafo={this.props.paragrafo}
+          link={this.props.link} />
+        <GrayImg gray={this.props.gray} img_url={this.props.img_url} />
+        <h3>Satellites</h3>
+        <ul>
+          {this.state.satellites.map((satellites, index)=>
+          <li id={index}>{satellites.name}</li>
+          )}
+        </ul>
+        <hr/>
+      </div>
+    )
+  }
 }
 
 export default Planet;

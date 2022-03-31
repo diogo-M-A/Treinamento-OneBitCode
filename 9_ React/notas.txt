@@ -1,1 +1,25 @@
- npx create-react-app nome-app
+ 
+npx create-react-app nome-app
+
+	STATE
+o state é recebido no formato de um objeto.
+
+necessário chamar o this.set.state sempre que for
+alterar o state.
+
+class myClass extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      // ...code
+    }
+  }
+}
+
+	LIFE CYCLE
+
+MOUNTING: quando ele é inserido no DOM.
+
+UPDANTING: quando é atualizado.
+
+UNMOUNTING: removido do DOM.
