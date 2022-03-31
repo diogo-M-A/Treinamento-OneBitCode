@@ -23,3 +23,14 @@ MOUNTING: quando ele é inserido no DOM.
 UPDANTING: quando é atualizado.
 
 UNMOUNTING: removido do DOM.
+
+
+	USE EFFECTS
+*passar um array vazio como segundo parâmetro para que
+o estado não seja re-renderizado.
+
+	
+	CONTROLLED COMPONENTS
+UNCONTROLLED: não está associado a state.
+
+CONTROLLED: está associado ao state.
