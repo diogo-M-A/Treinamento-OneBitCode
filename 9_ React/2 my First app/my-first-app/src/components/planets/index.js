@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Planet from "./planet";
+import Form from "./form";
 
 const ClickOnPlanet = (name) => {
   alert(`Um click no planeta: ${name}`)
@@ -10,14 +11,6 @@ async function getPlanets() {
   let data = await response.json();
   return data;
 }
-
-/* componentDidMount(){
-  getPlanets().then(data => {
-    setState(state => ({
-      planets: data['planets']
-    }))
-  })
-} */
 
 const Planets = () => {
   const [planets, setPlanets] = useState([
@@ -30,25 +23,16 @@ const Planets = () => {
     })
   }, [])
 
-  const removeLast = () => {
-    let new_Planets = [...planets];
-    new_Planets.pop();
-    setPlanets(new_Planets)
-  }
-
-  const duplicateLast = () => {
-    let lastPlanet = planets[planets.length - 1];
-    setPlanets([...planets, lastPlanet]);
+  const addPlanet = (newPlanet) =>{
+    setPlanets([...planets, newPlanet]);
   }
 
   return (
     <Fragment>
       <h1>Lista de planetas</h1>
+      <hr/>
+      <Form addPlanet={addPlanet}/>
       <hr />
-
-      <button onClick={removeLast}>Remove Last</button>
-      <button onClick={duplicateLast}>Duplicate Last</button>
-
       {planets.map((planet, index) =>
         <Planet
           id={planet.id}
