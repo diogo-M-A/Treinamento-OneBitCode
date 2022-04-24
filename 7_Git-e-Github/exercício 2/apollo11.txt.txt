@@ -1,4 +1,4 @@
-Data: 20 de julho de 1969
 Fato: primeiro voo tripulado a chegar na lua
 Duração: 8 dias
 Órbitas lunares: 30
+Descrição: lorem ipsum dolor siamet
